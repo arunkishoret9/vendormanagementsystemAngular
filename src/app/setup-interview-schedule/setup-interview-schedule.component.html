@@ -1,0 +1,74 @@
+<div class="container">
+
+    <div class="page-header">
+        <h1>
+             Interview Details ( Initial Screening )
+          
+        </h1>
+    </div>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="appliedSuccess">
+        <strong>Success !!</strong> Interview Scheduled Successfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <form class="form-horizontal" #interviewScheduleForm="ngForm">
+                      
+                      
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center">
+                                  
+                                  <i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="interviewdate" [(ngModel)]="scheduleInterviewData.interviewdate" 
+                                    name="interviewdate" type="date"
+                                     placeholder="Schedule Interview Date" class="form-control">
+                                     <br/>
+                                     <input class="form-control" type="time" id="interviewTime" name="interviewTime" 
+                                     [(ngModel)]="scheduleInterviewData.interviewTime"  placeholder="EST"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center">
+                                  
+                                  <i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <textarea id="interviewfeedback" [(ngModel)]="scheduleInterviewData.interviewfeedback" 
+                                    name="interviewfeedback" 
+                                     placeholder="Interview Feedback" class="form-control">
+                                     </textarea>
+                                  </div>
+                            </div>
+
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center">
+                                  
+                                  <i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <select class="form-control" name="interviewOutcome" [(ngModel)]="scheduleInterviewData.interviewOutcome">
+                                        <option value="accept"> Accept </option>
+                                        <option value="reject"> Reject </option>
+                                    </select>
+                                  </div>
+                            </div>
+                           
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <button type="button" (click)="scheduleInterview()" class="btn btn-primary btn-lg">Schedule Interview Date</button>
+                                </div>
+                            </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

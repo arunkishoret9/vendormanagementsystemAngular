@@ -1,0 +1,95 @@
+<div class="container">
+
+    <div class="page-header">
+        <h1>Submit Resume</h1>
+    </div>
+  
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="appliedSuccess">
+        <strong>Success !!</strong> Resume Submitted Successfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <form class="form-horizontal" #submitResumeForm="ngForm">
+                       
+                            <div class="form-group">
+                              
+                                
+                                
+                                <div class="col-md-8">
+                                    <input id="vendorcompany" [(ngModel)]="submitResumeData.vendorcompany"
+                                    name="vendorcompany" type="text"
+                                    placeholder="Vendor Company" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                               
+                                  
+                                
+                                <div class="col-md-8">
+                                    <input id="vendorname" [(ngModel)]="submitResumeData.vendorname" name="vendorname" type="text"
+                                     placeholder="Vendor Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                               
+                                  
+                                
+                                <div class="col-md-8">
+                                    <input id="vendoremail" [(ngModel)]="submitResumeData.vendoremail" name="vendoremail" type="text"
+                                     placeholder="Vendor Email" class="form-control">
+                                </div>
+                            </div>
+                            
+    
+                            <div class="form-group">
+                              
+                                <div class="col-md-8">
+                                    <input id="candidatename"
+                                     [(ngModel)]="submitResumeData.candidatename" name="candidatename" type="text" placeholder
+                                    ="Candidate Name" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                           
+                                <div class="col-md-8">
+                                    <input id="experienceyrs"
+                                     [(ngModel)]="submitResumeData.experienceyrs" name="experienceyrs" type="text" placeholder
+                                    ="Experience Years" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                               
+                                 
+                                <div class="col-md-8">
+                                   <select class="form-control" id="jobapplyingfor"
+                                   [(ngModel)]="submitResumeData.jobapplyingfor" name="jobapplyingfor">
+                                       <option *ngFor="let posting of allJobPosting">
+                                          {{ posting.jobTitle }}
+                                        </option>
+                                   </select>
+                                </div>
+                            </div>
+    
+                          
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <button type="button" (click)="submitResume()"
+                                    class="btn btn-primary btn-lg">Submit Resume</button>
+                                </div>
+                            </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

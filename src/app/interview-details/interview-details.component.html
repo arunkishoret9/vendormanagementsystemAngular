@@ -1,0 +1,52 @@
+<div class="container">
+
+    <div class="page-header">
+        <h1>
+            All  Candidate Related Data
+          
+        </h1>
+    </div>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="appliedSuccess">
+        <strong>Success !!</strong> Interview Scheduled Successfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Vendor Company</th>
+                        <th scope="col">Vendor Email</th>
+                        <th scope="col">Vendor Name</th>
+                        <th scope="col">Candidate Name</th>
+                        <th scope="col">Experience Years</th>
+                        <th scope="col">Job  Title</th>
+                        <th scope="col">Initial Screening Status</th>
+                        <th scope="col">Final Screening Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let details of candidateDetails;let $index=index;">
+                        <th scope="col"> {{ $index }} </th>
+                        <td> {{ details.vendorcompany}}</td>
+                        <td> {{ details.vendoremail}}</td>
+                        <td> {{ details.vendorname}}</td>
+                        <td> {{ details.candidatename}}</td>
+                        <td> {{ details.experienceyrs}}</td>
+                        <td> {{ details.jobapplyingfor}}</td>
+                        <td> {{ details.initialScreening}}</td>
+                        <td> {{ details.finalScreening}}</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    </div>
